@@ -14,7 +14,6 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [images, setImages] = useState(null);
-  const [error, setError] = useState(null);
   const [currentImageUrl, setCurrentImageUrl] = useState(null);
   const [currentImageDescription, setCurrentImageDescription] = useState(null);
 
@@ -37,7 +36,7 @@ const App = () => {
           setTotalImages(totalHits);
         })
         .catch(error => {
-          setError(error);
+          console.error(error);
         })
         .finally(() => {
           setIsLoading(false);
@@ -69,7 +68,7 @@ const App = () => {
             );
           })
           .catch(error => {
-            setError(error);
+            console.error(error);
           })
           .finally(() => {
             setIsLoading(false);
